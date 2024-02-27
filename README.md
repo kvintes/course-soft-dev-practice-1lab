@@ -1,0 +1,1 @@
+# Application "Squaring a Number"
