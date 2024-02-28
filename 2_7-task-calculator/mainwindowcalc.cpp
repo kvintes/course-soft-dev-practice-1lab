@@ -1,20 +1,6 @@
 #include "mainwindowcalc.h"
 #include "ui_mainwindowcalc.h"
 
-// MainWindowCalc::MainWindowCalc(QWidget *parent)
-//     : QMainWindow(parent)
-//     , ui(new Ui::MainWindowCalc)
-// {
-//     ui->setupUi(this);
-// }
-
-// MainWindowCalc::~MainWindowCalc()
-// {
-//     delete ui;
-// }
-
-
-
 Win::Win(QWidget *parent):QWidget(parent)
 {
     codec = QTextCodec::codecForName("Windows-1251");
@@ -94,3 +80,20 @@ void Win::calc()
             msgBox.exec();
         }
 }
+
+
+
+
+// MainWindowCalc::MainWindowCalc(QWidget *parent)
+//     : QMainWindow(parent)
+//     , ui(new Ui::MainWindowCalc)
+// {
+//     ui->setupUi(this);
+// }
+
+// MainWindowCalc::~MainWindowCalc()
+// {
+//     delete ui;
+// }
+
+
