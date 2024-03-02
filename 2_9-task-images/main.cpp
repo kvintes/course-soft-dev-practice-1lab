@@ -4,8 +4,8 @@
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    winManageImage w;
-    w.show();
-    return a.exec();
+    QApplication appl(argc, argv);
+    Window win;
+    win.show();
+    return appl.exec();
 }

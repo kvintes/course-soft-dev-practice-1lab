@@ -3,21 +3,16 @@
 
 #include <QMainWindow>
 
-QT_BEGIN_NAMESPACE
-namespace Ui {
-class winManageImage;
-}
-QT_END_NAMESPACE
 
-class winManageImage : public QMainWindow
+
+#include "area.h"
+class Window : public QWidget
 {
-    Q_OBJECT
-
+protected:
+    QTextCodec *codec;
+    Area * area; // область отображения рисунка
+    QPushButton * btn;
 public:
-    winManageImage(QWidget *parent = nullptr);
-    ~winManageImage();
-
-private:
-    Ui::winManageImage *ui;
+    Window();
 };
-#endif // WINMANAGEIMAGE_H
+#endif
