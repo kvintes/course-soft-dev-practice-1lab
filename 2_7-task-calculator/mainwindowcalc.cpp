@@ -4,7 +4,8 @@
 Win::Win(QWidget *parent):QWidget(parent)
 {
     codec = QTextCodec::codecForName("Windows-1251");
-    setWindowTitle(("Возведение в квадрат"));
+    //используем для случая, где стандартная кодировка отличается
+    setWindowTitle("Возведение в квадрат");
     frame = new QFrame(this);
     frame->setFrameShadow(QFrame::Raised);
     frame->setFrameShape(QFrame::Panel);
