@@ -28,6 +28,7 @@ protected:
     QPushButton *exitButton; // кнопка Выход
 public:
     Win(QWidget *parent = 0); // конструктор
+    //первый параметр родитель, по умолчанию 0 - родителя нет
 public slots:
     void begin(); // метод начальной настройки интерфейса
     void calc(); // метод реализации вычислений

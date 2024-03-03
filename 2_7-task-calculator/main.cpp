@@ -9,6 +9,6 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);//создание объекта приложения
     Win win(0); //создание объекта управления окном - наследник класса QWidget
-    win.show(); //визуализация окна win
+    win.show(); //показать объект win метод из QWidget
     return app.exec(); //запуск цикла обработки сообщений приложения
 }
