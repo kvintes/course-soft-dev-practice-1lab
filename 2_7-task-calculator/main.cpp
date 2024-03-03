@@ -1,11 +1,12 @@
-#include "mainwindowcalc.h"
+#include "mainwindowcalc.h"// подключаем заголовочный файл, содержащий описание класса Win
 
-#include <QApplication>
+#include <QApplication>//класс -> создание, инициализация главного окна,
+//запуск цикла обработки сообщений от операционной системы
 
 int main(int argc, char *argv[])
 {
-    QApplication app(argc, argv);
-    Win win(0);
-    win.show();
-    return app.exec();
+    QApplication app(argc, argv);//создание объекта приложения
+    Win win(0); //создание объекта управления окном - наследник класса QWidget
+    win.show(); //визуализация окна win
+    return app.exec(); //запуск цикла обработки сообщений приложения
 }
