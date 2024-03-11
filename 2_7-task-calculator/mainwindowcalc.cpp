@@ -39,12 +39,15 @@ Win::Win(QWidget *parent):QWidget(parent) //тело конструктора
     hLayout->addWidget(frame);
     hLayout->addLayout(vLayout2); //добавление компановщика в контейнер другого компоновщика
     begin();
-    connect(exitButton,SIGNAL(clicked(bool)), //связывает сигнал нажатия кнопки exitButton – clicked(bool) с его обработчиком
-            this,SLOT(close()));
+    // connect(exitButton,SIGNAL(clicked(bool)), //связывает сигнал нажатия кнопки exitButton – clicked(bool) с его обработчиком
+    //         this,SLOT(close()));
+    connect(exitButton, &QPushButton::clicked,
+            this, &Win::close);
     connect(nextButton,SIGNAL(clicked(bool)),
             this,SLOT(begin()));
     connect(inputEdit,SIGNAL(returnPressed()),
             this,SLOT(calc()));
+
 }
 void Win::begin()
 {
