@@ -15,8 +15,7 @@ SOURCES += \
 HEADERS += \
     mainwindowcalc.h
 
-FORMS += \
-    mainwindowcalc.ui
+FORMS +=
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
