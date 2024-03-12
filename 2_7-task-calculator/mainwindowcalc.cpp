@@ -1,7 +1,7 @@
 #include "mainwindowcalc.h"
 
 Win::Win(QWidget *parent):QWidget(parent) //тело конструктора
-// первый параметр родитель
+//конструктор создает необходимые объекты и строит окно
 {
     setWindowTitle("Возведение в квадрат");// устанавливаем заголовок окна
 
@@ -47,6 +47,8 @@ Win::Win(QWidget *parent):QWidget(parent) //тело конструктора
 
 }
 void Win::begin()
+//метод начальной настройки настраивает компоненты на ввод
+//делая невидимым окно и его метку
 {
     inputEdit->clear(); //очищает текстовое поле inputEdit
     nextButton->setEnabled(false); //кнопка неактивна для нажатия
@@ -58,6 +60,7 @@ void Win::begin()
     inputEdit->setFocus(); //делается активным для ввода текста
 }
 void Win::calc()
+//необходимые преобразования и расчеты, перестройка интерфейса и вывод результата
 {
     bool Ok=true; float r,a;
     QString str=inputEdit->text();
@@ -65,16 +68,26 @@ void Win::calc()
     if (Ok)
     {
         r=a*a;
-        str.setNum(r); //преобразуем в строку и сохраняем в str
+        str.setNum(r);
+        if(str == "inf"){
+            QMessageBox msgBox(QMessageBox::Warning, //icon
+                               "Возведение в квадрат.", //title
+                               "Переполнение: Введено слишком большое значение", //text
+                               QMessageBox::Ok); //кнопка ok при вызове QMessageBox
+            msgBox.exec();
+            return;
+        }
+        //str.setNum(r); //преобразуем в строку и сохраняем в str
         outputEdit->setText(str);
-        inputEdit->setEnabled(false);
-        outputLabel->setVisible(true);
+        inputEdit->setEnabled(false);//отключение взаимодействия с элементом
+        outputLabel->setVisible(true);//видимые элементы
         outputEdit->setVisible(true);
-        nextButton->setDefault(true);
-        nextButton->setEnabled(true);
-        nextButton->setFocus();
+        nextButton->setDefault(true);//кнопка по умолчанию при нажатии enter
+        nextButton->setEnabled(true);//кнопка активна для взаимодействия
+        nextButton->setFocus();//кнопка будет выделена и готова к принятию пользовательского ввода
     }
     else
+    {
         if (!str.isEmpty())
         {
             QMessageBox msgBox(QMessageBox::Information, //icon
@@ -83,4 +96,13 @@ void Win::calc()
                                QMessageBox::Ok); //кнопка ok при вызове QMessageBox
             msgBox.exec();
         }
+        else
+        {
+            QMessageBox msgBox(QMessageBox::Information, //icon
+                           "Возведение в квадрат.", //title
+                           "Введено пустое значение.", //text
+                           QMessageBox::Ok); //кнопка ok при вызове QMessageBox
+            msgBox.exec();
+        }
+    }
 }

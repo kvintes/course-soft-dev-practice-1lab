@@ -23,12 +23,16 @@ class Win:public QWidget // класс окна
     Q_OBJECT // макрос Qt, обеспечивающий корректное создание сигналов и слотов
 protected:
     QFrame *frame; // рамка
+    //указатель на рамку для размещения компонентов интерфейса
     QLabel *inputLabel; // метка ввода
+    //для отображения текста над полем ввода
     QLineEdit *inputEdit; // строчный редактор ввода
     QLabel *outputLabel; // метка вывода
     QLineEdit *outputEdit; // строчный редактор вывода
     QPushButton *nextButton; // кнопка Следующее
+    //для следующего примера
     QPushButton *exitButton; // кнопка Выход
+    //для завершения работы приложения
 public:
     Win(QWidget *parent = 0); // конструктор
     //первый параметр родитель, по умолчанию 0 - родителя нет
