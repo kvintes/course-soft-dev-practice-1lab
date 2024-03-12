@@ -3,8 +3,6 @@
 Win::Win(QWidget *parent):QWidget(parent) //тело конструктора
 // первый параметр родитель
 {
-    codec = QTextCodec::codecForName("Windows-1251");
-    //используем для случая, где стандартная кодировка отличается
     setWindowTitle("Возведение в квадрат");// устанавливаем заголовок окна
 
     frame = new QFrame(this);
