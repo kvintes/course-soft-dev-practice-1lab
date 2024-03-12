@@ -1,5 +1,4 @@
 #include "mainwindowcalc.h"
-// #include "ui_mainwindowcalc.h"
 
 Win::Win(QWidget *parent):QWidget(parent) //тело конструктора
 // первый параметр родитель
