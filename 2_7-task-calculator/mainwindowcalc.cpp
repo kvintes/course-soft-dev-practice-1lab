@@ -5,6 +5,8 @@ Win::Win(QWidget *parent):QWidget(parent) //тело конструктора
 {
     setWindowTitle("Возведение в квадрат");// устанавливаем заголовок окна
 
+    this->setMinimumWidth(500);
+
     frame = new QFrame(this);
     frame->setFrameShadow(QFrame::Raised); //устанавливает тень вокруг рамки, чтобы создать визуальный эффект поднятости
     frame->setFrameShape(QFrame::Panel); //устанавливает форму рамки как панель
@@ -71,7 +73,7 @@ void Win::calc()
     if (Ok)
     {
         r=a*a;
-        str.setNum(r);
+        str.setNum(r, 'f', 1);
         if(str == "inf"){
             QMessageBox msgBox(QMessageBox::Warning, //icon
                                "Возведение в квадрат.", //title
