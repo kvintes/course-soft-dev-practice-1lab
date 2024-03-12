@@ -40,11 +40,14 @@ Win::Win(QWidget *parent):QWidget(parent) //тело конструктора
     //         this,SLOT(close()));
     connect(exitButton, &QPushButton::clicked,
             this, &Win::close);
-    connect(nextButton,SIGNAL(clicked(bool)),
-            this,SLOT(begin()));
-    connect(inputEdit,SIGNAL(returnPressed()),
-            this,SLOT(calc()));
-
+    // connect(nextButton,SIGNAL(clicked(bool)),
+    //         this,SLOT(begin()));
+    connect(nextButton, &QPushButton::clicked,
+            this, &Win::begin);
+    // connect(inputEdit,SIGNAL(returnPressed()),
+    //         this,SLOT(calc()));
+    connect(inputEdit, &QLineEdit::returnPressed,
+            this, &Win::calc);
 }
 void Win::begin()
 //метод начальной настройки настраивает компоненты на ввод
