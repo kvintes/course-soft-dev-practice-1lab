@@ -1,6 +1,4 @@
 #include "wincounter.h"
-#include "ui_wincounter.h"
-
 
 Win::Win(QWidget *parent):QWidget(parent)
 {

@@ -15,8 +15,7 @@ SOURCES += \
 HEADERS += \
     wincounter.h
 
-FORMS += \
-    wincounter.ui
+FORMS +=
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

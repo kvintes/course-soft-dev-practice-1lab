@@ -3,12 +3,6 @@
 
 #include <QMainWindow>
 
-QT_BEGIN_NAMESPACE
-namespace Ui {
-class Counter;
-}
-QT_END_NAMESPACE
-
 
 #include <QLineEdit>
 #include <QString>
