@@ -19,7 +19,9 @@ class Counter:public QLineEdit
     Q_OBJECT
 public:
     Counter(const QString & contents, QWidget *parent=0):
-        QLineEdit(contents,parent){}
+        QLineEdit(contents,parent){
+        setReadOnly(true);//не нужно редактирование поля
+    }
 signals:
     void tick_signal();
 public slots:
@@ -37,7 +39,6 @@ class Win: public QWidget
 {
     Q_OBJECT
 protected:
-    QTextCodec *codec;
     QLabel *label1,*label2;
     Counter *edit1,*edit2;
     QPushButton *calcbutton;

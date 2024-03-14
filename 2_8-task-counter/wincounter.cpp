@@ -2,8 +2,7 @@
 
 Win::Win(QWidget *parent):QWidget(parent)
 {
-    codec = QTextCodec::codecForName("Windows-1251");
-    this->setWindowTitle("Счетчик");
+    this->setWindowTitle("Счетчик");//устанавливаем заголовок окна
     label1 = new QLabel("Cчет по 1",this);
     label2 = new QLabel("Cчет по 5",this);
     edit1 = new Counter("0",this);
