@@ -1,5 +1,4 @@
 #include "winmanageimage.h"
-#include "ui_winmanageimage.h"
 
 #include <QVBoxLayout>
 

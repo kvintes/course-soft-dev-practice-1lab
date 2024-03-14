@@ -19,8 +19,7 @@ HEADERS += \
     figura.h \
     winmanageimage.h
 
-FORMS += \
-    winmanageimage.ui
+FORMS +=
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
