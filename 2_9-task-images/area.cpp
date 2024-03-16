@@ -6,7 +6,7 @@ Area::Area(QWidget *parent):QWidget(parent)
     myrect=new MyRect(220,100,50);
     alpha=0;
 }
-void Area::showEvent(QShowEvent *)
+void Area::showEvent(QShowEvent *)//при создании окна showevent
 {
     myTimer=startTimer(50); // создать таймер
     //Qt::CoarseTimer
@@ -16,7 +16,7 @@ void Area::showEvent(QShowEvent *)
     //Событие таймера будет происходить каждыеinterval
 
 }
-void Area::paintEvent(QPaintEvent *)
+void Area::paintEvent(QPaintEvent *)//перерисовать окно
 {
     QPainter painter(this);//рисование будет происходить на текущем виджете
     painter.setPen(Qt::red);//Устанавливает перо художника на заданное значениеstyle, ширина 1 и черный цвет.
@@ -31,8 +31,7 @@ void Area::timerEvent(QTimerEvent *event)
         update(); // обновить внешний вид
     }
     else
-        QWidget::timerEvent(event); // иначе передать для стандартной
-    // обработки
+        QWidget::timerEvent(event); // иначе передать для стандартной обработки
 }
 void Area::hideEvent(QHideEvent *)
 {
