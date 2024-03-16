@@ -1,7 +1,7 @@
 #include "area.h"
 Area::Area(QWidget *parent):QWidget(parent)
 {
-    setFixedSize(QSize(300,200));//ширина длина
+    setFixedSize(QSize(300,200));//ширина высота
     myline=new MyLine(80,100,50);//наследник Figura(int X,int Y,int Halflen)
     myrect=new MyRect(220,100,50);
     alpha=0;
@@ -20,8 +20,8 @@ void Area::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);//рисование будет происходить на текущем виджете
     painter.setPen(Qt::red);//Устанавливает перо художника на заданное значениеstyle, ширина 1 и черный цвет.
-    myline->move(alpha,&painter);
-    myrect->move(alpha*(-0.5),&painter);
+    myline->move(alpha, &painter);//Figura::move -> draw-virtual
+    myrect->move(alpha*(-0.5), &painter);
 }
 void Area::timerEvent(QTimerEvent *event)
 {

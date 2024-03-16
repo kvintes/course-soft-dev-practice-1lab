@@ -10,7 +10,7 @@ protected:
 public:
     Figura(int X,int Y,int Halflen):
         x(X),y(Y),halflen(Halflen){}
-    void move(float Alpha,QPainter *Painter);
+    void move(float Alpha, QPainter *Painter);
 };
 class MyLine:public Figura
 {
