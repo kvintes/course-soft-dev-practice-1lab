@@ -19,7 +19,8 @@ class Counter:public QLineEdit
     Q_OBJECT
 public:
     Counter(const QString & contents, QWidget *parent=0):
-        QLineEdit(contents,parent){
+        QLineEdit(contents,parent)
+    {
         setReadOnly(true);//не нужно редактирование поля
     }
 signals:
